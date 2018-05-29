@@ -106,8 +106,8 @@ export default class App extends Component {
                    type="datetime" />
 
             {/* Options Inputs */}
-            <Input name="gender" label="Gender" next="email" type="select"
-                   options={genders}
+            <Input name="gender" label="Sex" next="email" type="select"
+                   options={genders} empty="Select sex"
             />
             <Input name="email" label="E-mail" next="phone" type="email" />
             <Input name="phone" label="phone" next="phone" type="phone"

@@ -33,6 +33,10 @@ class SelectInput extends AbstractSelectInput {
     };
   }
 
+  focus() {
+    // Only ios
+  }
+
   render() {
     const props = this.props;
     const state = this.state;
@@ -49,7 +53,10 @@ class SelectInput extends AbstractSelectInput {
           prompt={props.prompt}
           selectedValue={state.selectedValue}
           onValueChange={this.onConfirm}
-          style={[styles.defaultLabelStyle, props.selectCustomStyles.valueAndroid]}
+          style={[
+            styles.defaultLabelStyle,
+            props.selectCustomStyles.valueAndroid,
+          ]}
         >
           {options.map((option) => {
             return (
@@ -70,7 +77,10 @@ SelectInput.propTypes = {
   labelStyle: PropTypes.PropTypes.object,
   mode: PropTypes.oneOf(['dialog', 'dropdown']),
   options: PropTypes.array,
-  style: PropTypes.oneOfType([ViewPropTypes.style, PropTypes.arrayOf(ViewPropTypes.style)]),
+  style: PropTypes.oneOfType([
+    ViewPropTypes.style,
+    PropTypes.arrayOf(ViewPropTypes.style),
+  ]),
   value: PropTypes.any,
   prompt: PropTypes.string,
 };
