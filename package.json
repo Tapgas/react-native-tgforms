@@ -1,5 +1,5 @@
 {
-  "name": "react-native-tgforms",
+  "name": "@tapgas/react-native-tgforms",
   "version": "0.0.1",
   "description": "React native markup forms by Tapgas team",
   "main": "src/index.js",
