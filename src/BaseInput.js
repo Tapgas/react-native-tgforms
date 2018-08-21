@@ -408,11 +408,12 @@ class BaseInput extends Component {
   renderControl() {
     const props = this.beforeRenderControl(this.props);
     if (this.isTextInput(this.props.type)) { // Si se necesita un TextInput
-      if (this.props.type === 'password') {
-        props.secureTextEntry = true;
-      } else {
+      if(this.props.type !== 'password'){
         props.keyboardType = mapTypeToKeyboardType[this.props.type];
+      }else if(props.secureTextEntry === undefined){
+        props.secureTextEntry = true;
       }
+
       props.returnKeyType = props.next ? 'next' : props.returnKeyType;
       props.returnKeyType = props.send ? 'send' : props.returnKeyType;
       props.value = this.props.value ? this.props.value : this.state.value;
