@@ -1,6 +1,6 @@
 {
   "name": "@tapgas/react-native-forms",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React native markup forms by Tapgas team",
   "main": "src/index.js",
   "scripts": {
