@@ -234,10 +234,10 @@ class BaseInput extends Component {
     return moment(dateInstance).format(format);
   }
 
-
   setValue = (value) => {
     if (value !== this.state.value) {
-      this.setState({ value });
+      const { mask } = this.props;
+      this.setState({ value: mask ? MaskService.toMask('custom', value, { mask }) : value });
       this.onChange(value);
     }
   };
@@ -404,19 +404,20 @@ class BaseInput extends Component {
     );
   }
 
-
   renderControl() {
     const props = this.beforeRenderControl(this.props);
     if (this.isTextInput(this.props.type)) { // Si se necesita un TextInput
-      if(this.props.type !== 'password'){
+      if (this.props.type !== 'password') {
         props.keyboardType = mapTypeToKeyboardType[this.props.type];
-      }else if(props.secureTextEntry === undefined){
+      } else if (props.secureTextEntry === undefined) {
         props.secureTextEntry = true;
       }
 
       props.returnKeyType = props.next ? 'next' : props.returnKeyType;
       props.returnKeyType = props.send ? 'send' : props.returnKeyType;
-      props.value = this.props.value ? this.props.value : this.state.value;
+      const value = this.props.value ? this.props.value : this.state.value;
+      const { mask } = props;
+      props.value = mask ? MaskService.toMask('custom', value, { mask }) : value;
       return this.renderTextInput(props);
     }
     if (this.props.type === 'radio') {
