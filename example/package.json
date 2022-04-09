@@ -9,7 +9,7 @@
     "update-forms": "rm -rf node_modules/react-native-tgforms && yarn add react-native-tgforms@file:../src"
   },
   "dependencies": {
-    "moment": "2.22.1",
+    "moment": "2.29.2",
     "react": "16.3.1",
     "react-native": "0.55.4",
     "react-native-datepicker": "^1.6.0",
