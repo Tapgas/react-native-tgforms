@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/Tapgas/react-native-tgforms#readme",
   "dependencies": {
-    "moment": "2.22.1",
+    "moment": "2.29.4",
     "react-native-datepicker": "^1.6.0",
     "react-native-vector-icons": "^4.6.0",
     "tinymask": "^1.0.2",
